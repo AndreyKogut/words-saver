@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Words } from '../../api/words/words';
+import { Words } from '../../../api/words/words';
 
 import WordsList from './WordsList';
 

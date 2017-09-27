@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {
-  BrowserRouter,
-  Route,
-} from 'react-router-dom';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import WordsList from '../../ui/words';
+import App from '../../ui/App/App';
 
-ReactDOM.render((
+render((
   <BrowserRouter>
-    <Route path="/" component={WordsList} />
+    <App />
   </BrowserRouter>
 ), document.getElementById('app'));
