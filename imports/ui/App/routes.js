@@ -1,6 +1,7 @@
 import WordsList from '../pages/Words';
 import SignIn from '../pages/SignIn';
 import OnLoginPage from '../OnLoginPage';
+import NoPermission from '../pages/NoPermission';
 
 export const listeners = [
   {
@@ -14,6 +15,11 @@ export default [
     name: 'SignIn',
     path: '/sign-in',
     component: SignIn,
+  },
+  {
+    name: 'NoPermission',
+    path: '/rejected',
+    component: NoPermission,
   },
   {
     name: 'Main',
