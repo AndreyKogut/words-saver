@@ -1,4 +1,4 @@
-import WordsList from '../pages/Words';
+import Main from '../Main/Main';
 import SignIn from '../pages/SignIn';
 import OnLoginPage from '../OnLoginPage';
 import NoPermission from '../pages/NoPermission/NoPermission';
@@ -24,6 +24,6 @@ export default [
   {
     name: 'Main',
     path: '/',
-    component: WordsList,
+    component: Main,
   },
 ];
