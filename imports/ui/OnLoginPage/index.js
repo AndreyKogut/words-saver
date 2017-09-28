@@ -9,6 +9,10 @@ const rejectPath = '/rejected';
 const handleUrlUpdate = (history) => {
   if (!Meteor.userId() && !R.contains(history.location.pathname, [loginPath, rejectPath])) {
     history.push(rejectPath);
+  } else {
+    if (Meteor.userId() && R.contains(history.location.pathname, [loginPath, rejectPath])) {
+      history.push('/');
+    }
   }
 };
 

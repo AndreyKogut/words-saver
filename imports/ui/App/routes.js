@@ -1,7 +1,7 @@
 import WordsList from '../pages/Words';
 import SignIn from '../pages/SignIn';
 import OnLoginPage from '../OnLoginPage';
-import NoPermission from '../pages/NoPermission';
+import NoPermission from '../pages/NoPermission/NoPermission';
 
 export const listeners = [
   {
