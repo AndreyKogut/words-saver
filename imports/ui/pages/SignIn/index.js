@@ -11,10 +11,11 @@ const enhance = compose(
   withHandlers({
     onUsernameChange: ({ setUsername }) => (event) => setUsername(event.target.value),
     onPasswordChange: ({ setPassword }) => (event) => setPassword(event.target.value),
-    onLogin: ({ username, password }) => (event) => {
+    onLogin: ({ username, password }) => function onLogin(event) {
       event.preventDefault();
+      const onSuccess = () => this.location.replace('/');
 
-      Meteor.loginWithPassword(username, password, handleError());
+      Meteor.loginWithPassword(username, password, handleError(onSuccess));
     },
   })
 );
