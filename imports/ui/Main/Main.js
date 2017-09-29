@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import routes from './routes';
 
 const logout = function onLogout() {
-  Meteor.logout(() => this.location.replace('/sign-in'));
+  Meteor.logout(() => this.location.replace('/rejected'));
 };
 
 const Main = () => {
@@ -38,7 +38,7 @@ const Main = () => {
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a onClick={logout} className="btn btn-link">Logout</a>
+              <a onClick={logout} className="btn btn-link">Away</a>
             </li>
           </ul>
         </div>

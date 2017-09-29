@@ -30,6 +30,11 @@ const WordsSchema = new SimpleSchema({
     type: Number,
     label: 'Seria number',
   },
+
+  listId: {
+    type: String,
+    label: 'List id',
+  },
 });
 
 Words.attachSchema(WordsSchema);

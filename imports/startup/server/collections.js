@@ -1,7 +1,11 @@
 // Users
 import '../../api/users/users';
 
-// WordsList
+// Words
 import '../../api/words/words';
 import '../../api/words/methods';
 import '../../api/words/publications';
+
+// Lists
+import '../../api/lists/lists';
+import '../../api/lists/methods';
