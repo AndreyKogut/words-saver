@@ -11,6 +11,8 @@ Migrations.add({
       $set: {
         createdAt: new Date(),
       },
+    }, {
+      multi: true,
     });
 
     Words.update({}, {
@@ -21,6 +23,8 @@ Migrations.add({
         seria: 1,
         season: 1,
       },
+    }, {
+      multi: true,
     });
   },
 });
