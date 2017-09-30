@@ -7,8 +7,12 @@ Meteor.methods({
   'Lists.add'(title) {
     check(title, String);
 
-    if (!this.userId()) {
+    if (!this.userId) {
       throw Meteor.Error('Unauthorized');
+    }
+
+    if (!title.length) {
+      throw Meteor.Error('Invalid name');
     }
 
     return Lists.insert({ title });

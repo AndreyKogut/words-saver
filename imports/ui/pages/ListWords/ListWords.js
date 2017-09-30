@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import WordsList from '../../components/WordsList/WordsList';
 
 const ListWords = (props) => (
