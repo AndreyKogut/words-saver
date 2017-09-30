@@ -16,7 +16,6 @@ const WordsList = ({ words }) => (
 
 WordsList.propTypes = {
   words: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
 };
 
 export default WordsList;

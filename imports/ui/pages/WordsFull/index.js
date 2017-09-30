@@ -11,7 +11,6 @@ export default createContainer(() => {
 
   return {
     words: Words.find({}, { sort: { createdAt: 1 } }).fetch(),
-    loading: !subsHandler.ready(),
     onUnmount: () => subsHandler.stop(),
   };
 }, unmountEnhancer(WordsFull));
