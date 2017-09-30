@@ -10,7 +10,7 @@ const Lists = ({ lists }) => (
     {lists.map(({ _id, title }) => (
       <p key={_id}>
         <Link to={`/lists/${_id}/words`}>
-          {title}({getWordsCount(_id)})
+          {title} ({getWordsCount(_id)})
         </Link>
       </p>
     ))}
