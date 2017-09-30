@@ -26,3 +26,4 @@ accounts-password
 less
 percolate:migrations
 reywood:publish-composite
+fortawesome:fontawesome

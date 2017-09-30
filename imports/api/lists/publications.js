@@ -3,7 +3,7 @@ import { Lists } from './lists';
 import { Words } from '../words/words';
 
 Meteor.publishComposite('Lists.all', function getAll() {
-  if (!Meteor.userId()) {
+  if (!this.userId) {
     return this.ready();
   }
 

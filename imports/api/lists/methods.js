@@ -7,7 +7,7 @@ Meteor.methods({
   'Lists.add'(title) {
     check(title, String);
 
-    if (!Meteor.userId()) {
+    if (!this.userId()) {
       throw Meteor.Error('Unauthorized');
     }
 
