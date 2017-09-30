@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 
-import routes, { listeners } from './routes';
+import routes from './routes';
+import listeners from './listeners';
 
 const App = () => {
   const getRoutes =

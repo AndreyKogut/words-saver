@@ -6,7 +6,7 @@ import { lifecycle } from 'recompose';
 const loginPath = '/sign-in';
 const rejectPath = '/rejected';
 
-const handleUrlUpdate = (history) => {
+const handleUrlUpdate = (history) => () => {
   if (!Meteor.userId() && !R.contains(history.location.pathname, [loginPath, rejectPath])) {
     history.push(rejectPath);
   } else {

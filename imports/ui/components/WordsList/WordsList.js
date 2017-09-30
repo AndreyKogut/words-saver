@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './WordsList.less';
 
 const WordsList = ({ words }) => (
-  <div className="container words-list">
+  <div className="words-list">
     {words.map(({ _id, name, translation }) => (
       <dl className="dl-horizontal" key={_id}>
         <dt><span className="words-list__word">{name}</span></dt>

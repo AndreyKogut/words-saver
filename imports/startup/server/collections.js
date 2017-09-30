@@ -6,6 +6,7 @@ import '../../api/words/words';
 import '../../api/words/methods';
 import '../../api/words/publications';
 
-// Lists
+// ListsFull
 import '../../api/lists/lists';
 import '../../api/lists/methods';
+import '../../api/lists/publications';

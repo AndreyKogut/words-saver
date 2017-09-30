@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Switch, Route } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import routes from './routes';
 
@@ -18,7 +18,6 @@ const Main = () => {
       <div className="navbar navbar-default">
         <div className="navbar-header">
           <button type="button" data-target="#navItems" data-toggle="collapse" className="navbar-toggle">
-            <span className="sr-only">Toggle navigation</span>
             <span className="icon-bar" />
             <span className="icon-bar" />
             <span className="icon-bar" />
@@ -27,18 +26,17 @@ const Main = () => {
         <div className="collapse navbar-collapse" id="navItems">
           <ul className="nav navbar-nav">
             <li>
-              <NavLink to="/words">Words</NavLink>
+              <Link to="/">Words</Link>
             </li>
             <li>
-              <NavLink to="/word">Words</NavLink>
-            </li>
-            <li>
-              <NavLink to="/wor">Words</NavLink>
+              <Link to="/lists">Lists</Link>
             </li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a onClick={logout} className="btn btn-link">Away</a>
+              <a onClick={logout} className="btn btn-link">
+                <span className="text-danger">Away</span>
+              </a>
             </li>
           </ul>
         </div>

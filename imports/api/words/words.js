@@ -21,18 +21,6 @@ const WordsSchema = new SimpleSchema({
     label: 'Word translation',
   },
 
-  season: {
-    type: Number,
-    label: 'Season number',
-    optional: true,
-  },
-
-  seria: {
-    type: Number,
-    label: 'Seria number',
-    optional: true,
-  },
-
   listId: {
     type: String,
     label: 'List id',

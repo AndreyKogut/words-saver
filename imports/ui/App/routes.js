@@ -1,14 +1,6 @@
 import Main from '../Main/Main';
 import SignIn from '../pages/SignIn';
-import OnLoginPage from '../OnLoginPage';
 import NoPermission from '../pages/NoPermission/NoPermission';
-
-export const listeners = [
-  {
-    name: 'SignUpChecking',
-    component: OnLoginPage,
-  },
-];
 
 export default [
   {
