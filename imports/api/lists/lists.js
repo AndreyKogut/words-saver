@@ -8,6 +8,11 @@ const ListsSchema = new SimpleSchema({
     type: String,
     label: 'List title',
   },
+  createdAt: {
+    type: Date,
+    label: 'Creation date',
+    defaultValue: new Date(),
+  },
 });
 
 Lists.attachSchema(ListsSchema);

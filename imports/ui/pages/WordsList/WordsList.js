@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const WordsList = ({ words }) => (
-  <div className="col-12-xs">
+  <div className="container">
     {words.map(({ _id, name, translation }) => (
       <dl className="dl-horizontal" key={_id}>
         <dt>{name}</dt>

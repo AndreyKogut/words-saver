@@ -24,16 +24,24 @@ const WordsSchema = new SimpleSchema({
   season: {
     type: Number,
     label: 'Season number',
+    optional: true,
   },
 
   seria: {
     type: Number,
     label: 'Seria number',
+    optional: true,
   },
 
   listId: {
     type: String,
     label: 'List id',
+  },
+
+  createdAt: {
+    type: Date,
+    label: 'Creation date',
+    defaultValue: new Date(),
   },
 });
 
