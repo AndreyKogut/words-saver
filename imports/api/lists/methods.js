@@ -3,6 +3,7 @@ import { check } from 'meteor/check';
 
 import { Lists } from './lists';
 import { MongoId } from '../helpers';
+import { Words } from '../words/words';
 
 Meteor.methods({
   'Lists.add'(title) {
@@ -26,6 +27,10 @@ Meteor.methods({
       throw Meteor.Error('Unauthorized');
     }
 
-    return Lists.remove({ _id: listId });
+    const removedList = Lists.remove({ _id: listId });
+
+    Words.remove({ listId });
+
+    return removedList;
   },
 });
