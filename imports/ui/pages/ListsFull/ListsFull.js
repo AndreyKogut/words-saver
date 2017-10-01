@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Words } from '../../../api/words/words';
 
-const getWordsCount = listId => Words.find({ listId }).count();
+import ListItem from './ListItem';
 
-const Lists = ({ lists, listTitle, setListValue, onSubmit }) => (
+import './ListsFull.less';
+
+const Lists = ({ lists, listTitle, setListValue, onCreate, handleRemove }) => (
   <div className="container">
     <div className="row">
       <div className="col-xs-12 col-sm-6 pull-right">
-        <form className="form-group" onSubmit={onSubmit}>
+        <form className="form-group" onSubmit={onCreate}>
           <input
             type="text"
             value={listTitle}
@@ -19,22 +19,18 @@ const Lists = ({ lists, listTitle, setListValue, onSubmit }) => (
           <input type="submit" value="Add list" className="form-control" />
         </form>
       </div>
-      <div className="col-xs-12 col-sm-6">
-        {lists.map(({ _id, title }) => (
-          <p key={_id}>
-            <Link to={`/lists/${_id}`}>
-              {title} ({getWordsCount(_id)})
-            </Link>
-          </p>
-        ))}
+      <div className="col-xs-12 col-sm-6 list">
+        {lists.map(({ _id, ...data }) =>
+          <ListItem key={_id} {...data} _id={_id} onRemove={handleRemove(_id)} />)}
       </div>
     </div>
   </div>
 );
 
 Lists.propTypes = {
+  handleRemove: PropTypes.func.isRequired,
   lists: PropTypes.array.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+  onCreate: PropTypes.func.isRequired,
   listTitle: PropTypes.string.isRequired,
   setListValue: PropTypes.func.isRequired,
 };

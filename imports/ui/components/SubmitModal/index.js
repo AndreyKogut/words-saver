@@ -1,12 +1,14 @@
 import { compose, withHandlers, withState } from 'recompose';
-
-import Modal from './SubmitModal';
+import SubmitModal from './SubmitModal';
 
 const enhance = compose(
   withState('isOpen', 'setModalState', false),
   withHandlers({
     hideModal: ({ setModalState }) => () => {
       setModalState(false);
+    },
+    showModal: ({ setModalState }) => () => {
+      setModalState(true);
     },
     handleSubmit: ({ onSubmit, setModalState }) => () => {
       onSubmit();
@@ -15,4 +17,4 @@ const enhance = compose(
   })
 );
 
-export default enhance(Modal);
+export default enhance(SubmitModal);

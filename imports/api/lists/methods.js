@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
 import { Lists } from './lists';
+import { MongoId } from '../helpers';
 
 Meteor.methods({
   'Lists.add'(title) {
@@ -16,5 +17,15 @@ Meteor.methods({
     }
 
     return Lists.insert({ title });
+  },
+
+  'Lists.remove'(listId) {
+    check(listId, MongoId);
+
+    if (!this.userId) {
+      throw Meteor.Error('Unauthorized');
+    }
+
+    return Lists.remove({ _id: listId });
   },
 });

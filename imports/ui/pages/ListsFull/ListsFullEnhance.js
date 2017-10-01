@@ -3,6 +3,7 @@ import { compose, withHandlers, withState } from 'recompose';
 
 import ListFull from './ListsFull';
 import unmountEnhancer from '../../components/UnmountEnhancer';
+import { handleError } from '../../helpers';
 
 const enhance = compose(
   unmountEnhancer,
@@ -11,13 +12,15 @@ const enhance = compose(
     setListValue: ({ setListTitle }) => (event) => {
       setListTitle(event.target.value);
     },
-    onSubmit: ({ listTitle, setListTitle }) => (event) => {
+    onCreate: ({ listTitle, setListTitle }) => (event) => {
       event.preventDefault();
 
       if (listTitle) {
-        Meteor.call('Lists.add', listTitle);
-        setListTitle('');
+        Meteor.call('Lists.add', listTitle, handleError(() => setListTitle('')));
       }
+    },
+    handleRemove: () => (listId) => () => {
+      Meteor.call('Lists.remove', listId, handleError());
     },
   })
 );
