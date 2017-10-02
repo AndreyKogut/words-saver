@@ -11,7 +11,6 @@ const ListsSchema = new SimpleSchema({
   createdAt: {
     type: Date,
     label: 'Creation date',
-    defaultValue: new Date(),
   },
 });
 

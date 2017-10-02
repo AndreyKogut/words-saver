@@ -24,7 +24,7 @@ Meteor.methods({
       throw new Meteor.Error('Error: list is not found');
     }
 
-    return Words.insert({ name, translation, listId });
+    return Words.insert({ name, translation, listId, createdAt: new Date() });
   },
 
   'Words.remove'(wordId) {

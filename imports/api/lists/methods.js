@@ -17,7 +17,7 @@ Meteor.methods({
       throw Meteor.Error('Invalid name');
     }
 
-    return Lists.insert({ title });
+    return Lists.insert({ title, createdAt: new Date() });
   },
 
   'Lists.remove'(listId) {

@@ -10,7 +10,7 @@ export default createContainer(() => {
   const subsHandler = Meteor.subscribe('Words.all');
 
   return {
-    words: Words.find({}, { sort: { createdAt: 1 } }).fetch(),
+    words: Words.find({}, { sort: { createdAt: -1 } }).fetch(),
     onUnmount: () => subsHandler.stop(),
   };
 }, unmountEnhancer(WordsFull));

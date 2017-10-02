@@ -8,7 +8,7 @@ export default createContainer(() => {
   const subsHandler = Meteor.subscribe('Lists.all');
 
   return {
-    lists: Lists.find({}, { sort: { createdAt: 1 } }).fetch(),
+    lists: Lists.find({}, { sort: { createdAt: -1 } }).fetch(),
     onUnmount: () => subsHandler.stop(),
   };
 }, ListsFull);

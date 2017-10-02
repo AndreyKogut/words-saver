@@ -8,7 +8,7 @@ const ListWords = props => (
   <div className="container">
     <h1 className="text-center">{props.list.title}</h1>
 
-    <WordForm />
+    <WordForm listId={props.list._id} />
 
     <h2>Words</h2>
 

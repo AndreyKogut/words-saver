@@ -13,7 +13,7 @@ export default createContainer((props) => {
 
   return {
     list: Lists.findOne({ _id: listId }) || {},
-    words: Words.find({ listId }).fetch(),
+    words: Words.find({ listId }, { sort: { createdAt: -1 } }).fetch(),
     onUnmount: () => subsHandler.stop(),
   };
 }, UnmountEnhancer(ListWords));
