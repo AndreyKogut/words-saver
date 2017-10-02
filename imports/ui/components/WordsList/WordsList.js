@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import WordsListItem from './WordsListItem';
+
 import './WordsList.less';
 
 const WordsList = ({ words }) => (
   <div className="words-list">
-    {words.map(({ _id, name, translation }) => (
-      <dl className="dl-horizontal" key={_id}>
-        <dt><span className="words-list__word">{name}</span></dt>
-        <dd>{translation}</dd>
-      </dl>
-    ))}
+    {words.map(word => <WordsListItem key={word._id} word={word} />)}
   </div>
 );
 

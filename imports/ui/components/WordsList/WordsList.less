@@ -1,4 +1,22 @@
 .words-list {
+  &__item-wrapper {
+    display: flex;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+
+    & > * {
+      align-self: center;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    flex: 1;
+  }
+
+  &__controls {
+    flex: 0;
+  }
+
   &__word {
     white-space: normal;
   }
