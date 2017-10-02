@@ -24,8 +24,8 @@ const WordsListItemEditable = ({ name, translation, onNameChange, onTranslationC
 WordsListItemEditable.propTypes = {
   name: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
-  onTranslationChange: PropTypes.string.isRequired,
-  onNameChange: PropTypes.string.isRequired,
+  onTranslationChange: PropTypes.func.isRequired,
+  onNameChange: PropTypes.func.isRequired,
 };
 
 export default WordsListItemEditable;

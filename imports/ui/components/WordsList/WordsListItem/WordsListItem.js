@@ -5,7 +5,7 @@ import WordsListItemEditable from './WordsListItemEditable';
 import WordsListItemStatic from './WordsListItemStatic';
 import SubmitModal from '../../SubmitModal';
 
-const WordsListItem = ({ onChange, onRemove, isEditable, word }) => (
+const WordsListItem = ({ onChange, onRemove, isEditable, showEditor, hideEditor, word }) => (
   <dl className="dl-horizontal words-list__item-wrapper padding-bottom--small clearfix">
     {!isEditable
       ? <WordsListItemStatic {...word} />
@@ -18,6 +18,13 @@ const WordsListItem = ({ onChange, onRemove, isEditable, word }) => (
         iconStyles="fa fa-times text-danger"
         buttonStyles="btn btn-link"
       />
+      {!isEditable
+        ? (<button onClick={showEditor} className="btn btn-link">
+          <i className="fa fa-edit text-info" />
+        </button>)
+        : (<button onClick={hideEditor} className="btn btn-link">
+          <i className="fa fa-check text-success" />
+        </button>)}
     </div>
   </dl>
 );
@@ -27,6 +34,8 @@ WordsListItem.propTypes = {
   onChange: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
   isEditable: PropTypes.bool.isRequired,
+  showEditor: PropTypes.func.isRequired,
+  hideEditor: PropTypes.func.isRequired,
 };
 
 export default WordsListItem;
