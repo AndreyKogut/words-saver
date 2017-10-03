@@ -9,14 +9,20 @@ const Lists = ({ lists, listTitle, setListValue, onCreate, handleRemove }) => (
   <div className="container">
     <div className="row">
       <div className="col-xs-12 col-sm-6 pull-right">
-        <form className="form-group" onSubmit={onCreate}>
-          <input
-            type="text"
-            value={listTitle}
-            onChange={setListValue}
-            className="form-control"
-          />
-          <input type="submit" value="Add list" className="form-control" />
+        <form className="form" onSubmit={onCreate}>
+          <div className="form-group">
+            <label htmlFor="title" className="control-label">
+              Title:
+            </label>
+            <input
+              type="text"
+              id="title"
+              value={listTitle}
+              onChange={setListValue}
+              className="form-control"
+            />
+          </div>
+          <input type="submit" value="Add list" className="btn btn-primary" />
         </form>
       </div>
       <div className="col-xs-12 col-sm-6 list">
