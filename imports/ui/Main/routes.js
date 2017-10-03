@@ -2,6 +2,7 @@ import WordsFull from '../pages/WordsFull';
 import Lists from '../pages/ListsFull';
 import ListWords from '../pages/ListWords';
 import ListWordsTrainingNativeForeign from '../pages/ListWordsTrainingNativeForeign/ListWordsTrainingNativeForeing';
+import ListWordsTrainingForeingNative from '../pages/ListWordsTrainingForeignNative/ListWordsTrainingForeingNative';
 
 export default [
   {
@@ -10,8 +11,13 @@ export default [
     component: ListWordsTrainingNativeForeign,
   },
   {
+    name: 'List words training foreign to native',
+    path: '/lists/:id/foreign-to-native',
+    component: ListWordsTrainingForeingNative,
+  },
+  {
     name: 'List words',
-    path: '/lists/:id',
+    path: '/lists/:id/',
     component: ListWords,
   },
   {

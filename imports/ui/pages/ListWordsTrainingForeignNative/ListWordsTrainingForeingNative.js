@@ -7,8 +7,8 @@ const ListWordsTrainingNativeForeign = (props) => (
   <div className="container">
     <FullListTraining
       listId={R.pathOr('', ['match', 'params', 'id'], props)}
-      hiddenProp="name"
-      visibleProp="translation"
+      hiddenProp="translation"
+      visibleProp="name"
     />
   </div>
 );
