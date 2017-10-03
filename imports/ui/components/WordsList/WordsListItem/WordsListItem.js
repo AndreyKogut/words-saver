@@ -6,7 +6,7 @@ import WordsListItemStatic from './WordsListItemStatic';
 import SubmitModal from '../../SubmitModal';
 
 const WordsListItem = ({ onChange, onRemove, isEditable, showEditor, hideEditor, word }) => (
-  <dl className="dl-horizontal words-list__item-wrapper padding-bottom--small clearfix">
+  <dl className="dl-horizontal words-list__item-wrapper light-separator padding-bottom--small clearfix">
     {!isEditable
       ? <WordsListItemStatic {...word} />
       : <WordsListItemEditable {...word} onChange={onChange} />}
